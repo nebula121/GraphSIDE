@@ -1,0 +1,384 @@
+{
+    "dataSet": {
+        "dataSet1": {
+            "calcData": {},
+            "enable": true,
+            "headerNum": 7,
+            "id": "dCCee8himAxfEbYQ",
+            "rawData": {
+                "rawData1": {
+                    "coefficient": 1.0,
+                    "name": "time"
+                },
+                "rawData2": {
+                    "coefficient": 1.0,
+                    "name": "sin"
+                },
+                "rawData3": {
+                    "coefficient": 1.0,
+                    "name": "cos"
+                }
+            },
+            "title": "test"
+        }
+    },
+    "general": {
+        "font1": "Times New Roman",
+        "font2": "ＭＳ Ｐ明朝",
+        "fontSize": 10.5
+    },
+    "graphSet": {
+        "graphSet1": {
+            "antialias": true,
+            "dataSet": {
+                "id": "dCCee8himAxfEbYQ",
+                "index": 1
+            },
+            "enable": true,
+            "graphs": {
+                "graph1": {
+                    "backgroundColor": "#FFFFFF",
+                    "id": "oqpYGWpVwLe1q9qi",
+                    "plots": {
+                        "plot1": {
+                            "color": "#000000",
+                            "dataScopeMax": -1,
+                            "dataScopeMin": -1,
+                            "style": "Line (Solid)",
+                            "title": "",
+                            "x": "r2",
+                            "y": "r3",
+                            "yAxis": 0
+                        },
+                        "plot2": {
+                            "color": "c",
+                            "dataScopeMax": -1,
+                            "dataScopeMin": -1,
+                            "style": "Point (Square)",
+                            "title": "",
+                            "x": "r2",
+                            "y": "r3",
+                            "yAxis": 0
+                        }
+                    },
+                    "position": {
+                        "c": 1,
+                        "r": 1
+                    },
+                    "range": {
+                        "xRange": {
+                            "max": 1.5,
+                            "min": -1.5
+                        },
+                        "y1Range": {
+                            "max": 1.5,
+                            "min": -1.5
+                        },
+                        "y2Range": {
+                            "max": 0.0,
+                            "min": 0.0
+                        },
+                        "y3Range": {
+                            "max": 0.0,
+                            "min": 0.0
+                        }
+                    },
+                    "size": {
+                        "h": 300,
+                        "w": 400
+                    },
+                    "span": {
+                        "c": 1,
+                        "r": 1
+                    },
+                    "tick": {
+                        "xTick": {
+                            "major": -1.0,
+                            "minor": -1.0
+                        },
+                        "y1Tick": {
+                            "major": -1.0,
+                            "minor": -1.0
+                        },
+                        "y2Tick": {
+                            "major": -1.0,
+                            "minor": -1.0
+                        },
+                        "y3Tick": {
+                            "major": -1.0,
+                            "minor": -1.0
+                        }
+                    },
+                    "title": "Graph",
+                    "xAxisTitle": "x [mm]",
+                    "xAxisTitleColor": "#000000",
+                    "y1AxisTitle": "y [mm]",
+                    "y1AxisTitleColor": "#000000",
+                    "y2AxisTitle": "",
+                    "y2AxisTitleColor": "#000000",
+                    "y3AxisTitle": "",
+                    "y3AxisTitleColor": "#000000",
+                    "yAxisNum": 1
+                },
+                "graph2": {
+                    "backgroundColor": "#FFFFFF00",
+                    "id": "09oKZpfRcAvOYjSl",
+                    "plots": {
+                        "plot1": {
+                            "color": "r",
+                            "dataScopeMax": -1,
+                            "dataScopeMin": -1,
+                            "style": "Line (Solid)",
+                            "title": "",
+                            "x": "r1",
+                            "y": "r3",
+                            "yAxis": 0
+                        }
+                    },
+                    "position": {
+                        "c": 2,
+                        "r": 1
+                    },
+                    "range": {
+                        "xRange": {
+                            "max": 105.0,
+                            "min": -5.0
+                        },
+                        "y1Range": {
+                            "max": 1.5,
+                            "min": -1.5
+                        },
+                        "y2Range": {
+                            "max": 0.0,
+                            "min": 0.0
+                        },
+                        "y3Range": {
+                            "max": 0.0,
+                            "min": 0.0
+                        }
+                    },
+                    "size": {
+                        "h": 0,
+                        "w": 0
+                    },
+                    "span": {
+                        "c": 1,
+                        "r": 1
+                    },
+                    "tick": {
+                        "xTick": {
+                            "major": -1.0,
+                            "minor": -1.0
+                        },
+                        "y1Tick": {
+                            "major": -1.0,
+                            "minor": -1.0
+                        },
+                        "y2Tick": {
+                            "major": -1.0,
+                            "minor": -1.0
+                        },
+                        "y3Tick": {
+                            "major": -1.0,
+                            "minor": -1.0
+                        }
+                    },
+                    "title": "Graph",
+                    "xAxisTitle": "time [s]",
+                    "xAxisTitleColor": "#000000",
+                    "y1AxisTitle": "y [mm]",
+                    "y1AxisTitleColor": "#FF0000",
+                    "y2AxisTitle": "",
+                    "y2AxisTitleColor": "#000000",
+                    "y3AxisTitle": "",
+                    "y3AxisTitleColor": "#000000",
+                    "yAxisNum": 1
+                },
+                "graph3": {
+                    "backgroundColor": "#FFFFFF00",
+                    "id": "fMpPFaXNlihOM329",
+                    "plots": {
+                        "plot1": {
+                            "color": "g",
+                            "dataScopeMax": -1,
+                            "dataScopeMin": -1,
+                            "style": "Line (Solid)",
+                            "title": "",
+                            "x": "r2",
+                            "y": "r1",
+                            "yAxis": 0
+                        }
+                    },
+                    "position": {
+                        "c": 1,
+                        "r": 2
+                    },
+                    "range": {
+                        "xRange": {
+                            "max": 1.5,
+                            "min": -1.5
+                        },
+                        "y1Range": {
+                            "max": 105.0,
+                            "min": -5.0
+                        },
+                        "y2Range": {
+                            "max": 0.0,
+                            "min": 0.0
+                        },
+                        "y3Range": {
+                            "max": 0.0,
+                            "min": 0.0
+                        }
+                    },
+                    "size": {
+                        "h": 0,
+                        "w": 0
+                    },
+                    "span": {
+                        "c": 1,
+                        "r": 1
+                    },
+                    "tick": {
+                        "xTick": {
+                            "major": -1.0,
+                            "minor": -1.0
+                        },
+                        "y1Tick": {
+                            "major": -1.0,
+                            "minor": -1.0
+                        },
+                        "y2Tick": {
+                            "major": -1.0,
+                            "minor": -1.0
+                        },
+                        "y3Tick": {
+                            "major": -1.0,
+                            "minor": -1.0
+                        }
+                    },
+                    "title": "Graph",
+                    "xAxisTitle": "x [mm]",
+                    "xAxisTitleColor": "#00FF00",
+                    "y1AxisTitle": "time [s]",
+                    "y1AxisTitleColor": "#000000",
+                    "y2AxisTitle": "",
+                    "y2AxisTitleColor": "#000000",
+                    "y3AxisTitle": "",
+                    "y3AxisTitleColor": "#000000",
+                    "yAxisNum": 1
+                },
+                "graph4": {
+                    "backgroundColor": "#FFFFFF",
+                    "id": "V2wokFrb0M7BrcHi",
+                    "plots": {
+                        "plot1": {
+                            "color": "g",
+                            "dataScopeMax": -1,
+                            "dataScopeMin": -1,
+                            "style": "Line (Solid)",
+                            "title": "",
+                            "x": "r1",
+                            "y": "r2",
+                            "yAxis": 0
+                        },
+                        "plot2": {
+                            "color": "r",
+                            "dataScopeMax": -1,
+                            "dataScopeMin": -1,
+                            "style": "Line (Solid)",
+                            "title": "",
+                            "x": "r1",
+                            "y": "r3",
+                            "yAxis": 1
+                        },
+                        "plot3": {
+                            "color": "b",
+                            "dataScopeMax": -1,
+                            "dataScopeMin": -1,
+                            "style": "Line (Solid)",
+                            "title": "",
+                            "x": "r1",
+                            "y": "r1",
+                            "yAxis": 2
+                        }
+                    },
+                    "position": {
+                        "c": 2,
+                        "r": 2
+                    },
+                    "range": {
+                        "xRange": {
+                            "max": 105.0,
+                            "min": -5.0
+                        },
+                        "y1Range": {
+                            "max": 1.5,
+                            "min": -1.5
+                        },
+                        "y2Range": {
+                            "max": 1.5,
+                            "min": -1.5
+                        },
+                        "y3Range": {
+                            "max": 105.0,
+                            "min": -5.0
+                        }
+                    },
+                    "size": {
+                        "h": 300,
+                        "w": 400
+                    },
+                    "span": {
+                        "c": 1,
+                        "r": 1
+                    },
+                    "tick": {
+                        "xTick": {
+                            "major": -1.0,
+                            "minor": -1.0
+                        },
+                        "y1Tick": {
+                            "major": -1.0,
+                            "minor": -1.0
+                        },
+                        "y2Tick": {
+                            "major": -1.0,
+                            "minor": -1.0
+                        },
+                        "y3Tick": {
+                            "major": -1.0,
+                            "minor": -1.0
+                        }
+                    },
+                    "title": "Graph",
+                    "xAxisTitle": "Time [s]",
+                    "xAxisTitleColor": "#000000",
+                    "y1AxisTitle": "X [mm]",
+                    "y1AxisTitleColor": "#FF0000",
+                    "y2AxisTitle": "Y [mm]",
+                    "y2AxisTitleColor": "#00FF00",
+                    "y3AxisTitle": "Time [s]",
+                    "y3AxisTitleColor": "#0000FF",
+                    "yAxisNum": 3
+                }
+            },
+            "id": "VJBWrxVVBNx8922R",
+            "title": "test"
+        }
+    },
+    "lastState": {
+        "dir": "C:\\Users\\kappa\\Programing\\Python\\graphMake2\\sample",
+        "geometry": "346, 180, 1180, 663",
+        "graphSet": {
+            "id": "VJBWrxVVBNx8922R",
+            "index": 1
+        },
+        "settingVer": "0.1"
+    },
+    "shortcut": {
+        "awpp": "..\\..\\..\\研究室\\awpp\\使用データ",
+        "exam": "..\\..\\..\\研究室\\実験",
+        "jspp": "..\\..\\..\\研究室\\JSPP\\yokou\\data"
+    }
+}

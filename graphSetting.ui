@@ -1,0 +1,1052 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>734</width>
+    <height>676</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="upperLayout">
+     <item>
+      <widget class="QTreeWidget" name="graphTreeWidget">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <column>
+        <property name="text">
+         <string notr="true">1</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="graphTreeButtonLayout">
+       <item>
+        <widget class="QPushButton" name="graphNewButton">
+         <property name="text">
+          <string>New</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="graphCopyButton">
+         <property name="text">
+          <string>Copy</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="graphUpButton">
+         <property name="text">
+          <string>↑</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="graphDownButton">
+         <property name="text">
+          <string>↓</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="graphEnableButton">
+         <property name="text">
+          <string>Enable / Disable</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="graphDeleteButton">
+         <property name="text">
+          <string>Delete</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QStackedWidget" name="stackedWidget">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="currentIndex">
+        <number>1</number>
+       </property>
+       <widget class="QWidget" name="page1"/>
+       <widget class="QWidget" name="page2"/>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Graph frame</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <layout class="QFormLayout" name="formLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>Title</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="titleEdit"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_18">
+           <property name="text">
+            <string>Bg Coler</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="bgColorEdit"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Num of axis</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QSpinBox" name="axisNumSpinBox"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="0" column="1">
+          <widget class="QGroupBox" name="groupBox_2">
+           <property name="title">
+            <string>Axis</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_8">
+            <item>
+             <layout class="QFormLayout" name="axisTitleSettingLayout">
+              <property name="fieldGrowthPolicy">
+               <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+              </property>
+              <item row="0" column="1">
+               <layout class="QHBoxLayout" name="axisLayout">
+                <item>
+                 <widget class="QLabel" name="axisTitleEdit">
+                  <property name="text">
+                   <string>[Title]</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="axisTitleColorEdit">
+                  <property name="text">
+                   <string>[Color]</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="xAxisLabel">
+                <property name="text">
+                 <string>Bottom</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <layout class="QHBoxLayout" name="xAxisLayout">
+                <item>
+                 <widget class="QLineEdit" name="xAxisTitleEdit">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="xAxisTitleColorEdit">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="y1AxisLabel">
+                <property name="text">
+                 <string>Left</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <layout class="QHBoxLayout" name="y1AxisLayout">
+                <item>
+                 <widget class="QLineEdit" name="y1AxisTitleEdit">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="y1AxisTitleColorEdit">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="3" column="0">
+               <widget class="QLabel" name="y2AxisLabel">
+                <property name="text">
+                 <string>Right</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <layout class="QHBoxLayout" name="y2AxisLayout">
+                <item>
+                 <widget class="QLineEdit" name="y2AxisTitleEdit">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="y2AxisTitleColorEdit">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="4" column="0">
+               <widget class="QLabel" name="y3AxisLabel">
+                <property name="text">
+                 <string>Third</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="1">
+               <layout class="QHBoxLayout" name="y3AxisLayout">
+                <item>
+                 <widget class="QLineEdit" name="y3AxisTitleEdit">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="y3AxisTitleColorEdit">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QGroupBox" name="groupBox">
+           <property name="title">
+            <string>GroupBox</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_7">
+            <item>
+             <layout class="QFormLayout" name="formLayout_2">
+              <item row="3" column="0">
+               <widget class="QLabel" name="label_2">
+                <property name="text">
+                 <string>Position</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="0">
+               <widget class="QLabel" name="label_3">
+                <property name="text">
+                 <string>Span</string>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="0">
+               <widget class="QLabel" name="label_4">
+                <property name="text">
+                 <string>Size</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <layout class="QHBoxLayout" name="positionLayout">
+                <item>
+                 <widget class="QSpinBox" name="positionSpinBox1"/>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="positionSpinBox2"/>
+                </item>
+               </layout>
+              </item>
+              <item row="4" column="1">
+               <layout class="QHBoxLayout" name="spanLayout">
+                <item>
+                 <widget class="QSpinBox" name="spanSpinBox1"/>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="spanSpinBox2"/>
+                </item>
+               </layout>
+              </item>
+              <item row="5" column="1">
+               <layout class="QHBoxLayout" name="sizeLayout">
+                <item>
+                 <widget class="QSpinBox" name="sizeSpinBox1"/>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="sizeSpinBox2"/>
+                </item>
+               </layout>
+              </item>
+              <item row="1" column="1">
+               <layout class="QHBoxLayout" name="horizontalLayout_6">
+                <item>
+                 <widget class="QLabel" name="label_20">
+                  <property name="text">
+                   <string>[Row / Height]</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_19">
+                  <property name="text">
+                   <string>[Colomn / Width]</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QGroupBox" name="groupBox_3">
+           <property name="title">
+            <string>Tick</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_9">
+            <item>
+             <layout class="QFormLayout" name="formLayout_3">
+              <property name="fieldGrowthPolicy">
+               <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+              </property>
+              <item row="0" column="1">
+               <layout class="QHBoxLayout" name="horizontalLayout_3">
+                <item>
+                 <widget class="QLabel" name="label_11">
+                  <property name="text">
+                   <string>[Major]</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_12">
+                  <property name="text">
+                   <string>[Minor]</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="label_13">
+                <property name="text">
+                 <string>Bottom</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <layout class="QHBoxLayout" name="xTickLayout">
+                <item>
+                 <widget class="QDoubleSpinBox" name="xMajorTickSpinBox">
+                  <property name="decimals">
+                   <number>6</number>
+                  </property>
+                  <property name="minimum">
+                   <double>-1000000000000.000000000000000</double>
+                  </property>
+                  <property name="maximum">
+                   <double>1000000000000.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QDoubleSpinBox" name="xMinorTickSpinBox">
+                  <property name="decimals">
+                   <number>6</number>
+                  </property>
+                  <property name="minimum">
+                   <double>-1000000000000.000000000000000</double>
+                  </property>
+                  <property name="maximum">
+                   <double>1000000000000.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="label_14">
+                <property name="text">
+                 <string>Left</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <layout class="QHBoxLayout" name="y1TickLayout">
+                <item>
+                 <widget class="QDoubleSpinBox" name="y1MajorTickSpinBox">
+                  <property name="decimals">
+                   <number>6</number>
+                  </property>
+                  <property name="minimum">
+                   <double>-1000000000000.000000000000000</double>
+                  </property>
+                  <property name="maximum">
+                   <double>1000000000000.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QDoubleSpinBox" name="y1MinorTickSpinBox">
+                  <property name="decimals">
+                   <number>6</number>
+                  </property>
+                  <property name="minimum">
+                   <double>-1000000000000.000000000000000</double>
+                  </property>
+                  <property name="maximum">
+                   <double>1000000000000.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="3" column="0">
+               <widget class="QLabel" name="label_15">
+                <property name="text">
+                 <string>Right</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <layout class="QHBoxLayout" name="y2TickLayout">
+                <item>
+                 <widget class="QDoubleSpinBox" name="y2MajorTickSpinBox">
+                  <property name="decimals">
+                   <number>6</number>
+                  </property>
+                  <property name="minimum">
+                   <double>-1000000000000.000000000000000</double>
+                  </property>
+                  <property name="maximum">
+                   <double>1000000000000.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QDoubleSpinBox" name="y2MinorTickSpinBox">
+                  <property name="decimals">
+                   <number>6</number>
+                  </property>
+                  <property name="minimum">
+                   <double>-1000000000000.000000000000000</double>
+                  </property>
+                  <property name="maximum">
+                   <double>1000000000000.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="4" column="0">
+               <widget class="QLabel" name="label_16">
+                <property name="text">
+                 <string>Third</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="1">
+               <layout class="QHBoxLayout" name="y3TickLayout">
+                <item>
+                 <widget class="QDoubleSpinBox" name="y3MajorTickSpinBox">
+                  <property name="decimals">
+                   <number>6</number>
+                  </property>
+                  <property name="minimum">
+                   <double>-1000000000000.000000000000000</double>
+                  </property>
+                  <property name="maximum">
+                   <double>1000000000000.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QDoubleSpinBox" name="y3MinorTickSpinBox">
+                  <property name="decimals">
+                   <number>6</number>
+                  </property>
+                  <property name="minimum">
+                   <double>-1000000000000.000000000000000</double>
+                  </property>
+                  <property name="maximum">
+                   <double>1000000000000.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QGroupBox" name="groupBox_4">
+           <property name="title">
+            <string>Range</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_10">
+            <item>
+             <layout class="QFormLayout" name="rangeSettingLayout">
+              <property name="fieldGrowthPolicy">
+               <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+              </property>
+              <item row="1" column="1">
+               <layout class="QHBoxLayout" name="horizontalLayout_2">
+                <item>
+                 <widget class="QLabel" name="label_9">
+                  <property name="text">
+                   <string>[Bottom edge / Left edge]</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_8">
+                  <property name="text">
+                   <string>[Upper edge / Right edge]</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="xRangeLabel">
+                <property name="text">
+                 <string>Bottom</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <layout class="QHBoxLayout" name="xRangeLayout">
+                <item>
+                 <widget class="QDoubleSpinBox" name="xMinRangeSpinBox">
+                  <property name="accelerated">
+                   <bool>false</bool>
+                  </property>
+                  <property name="showGroupSeparator" stdset="0">
+                   <bool>false</bool>
+                  </property>
+                  <property name="decimals">
+                   <number>6</number>
+                  </property>
+                  <property name="minimum">
+                   <double>-1000000000000.000000000000000</double>
+                  </property>
+                  <property name="maximum">
+                   <double>1000000000000.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="xRangeLabel_2">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>10</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>-</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QDoubleSpinBox" name="xMaxRangeSpinBox">
+                  <property name="decimals">
+                   <number>6</number>
+                  </property>
+                  <property name="minimum">
+                   <double>-1000000000000.000000000000000</double>
+                  </property>
+                  <property name="maximum">
+                   <double>1000000000000.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="3" column="0">
+               <widget class="QLabel" name="y1RangeLabel">
+                <property name="text">
+                 <string>Left</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <layout class="QHBoxLayout" name="y1RangeLayout">
+                <item>
+                 <widget class="QDoubleSpinBox" name="y1MinRangeSpinBox">
+                  <property name="decimals">
+                   <number>6</number>
+                  </property>
+                  <property name="minimum">
+                   <double>-1000000000000.000000000000000</double>
+                  </property>
+                  <property name="maximum">
+                   <double>1000000000000.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="y1RangeLabel_2">
+                  <property name="maximumSize">
+                   <size>
+                    <width>10</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>-</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QDoubleSpinBox" name="y1MaxRangeSpinBox">
+                  <property name="decimals">
+                   <number>6</number>
+                  </property>
+                  <property name="minimum">
+                   <double>-1000000000000.000000000000000</double>
+                  </property>
+                  <property name="maximum">
+                   <double>1000000000000.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="4" column="0">
+               <widget class="QLabel" name="y2RangeLabel">
+                <property name="text">
+                 <string>Right</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="1">
+               <layout class="QHBoxLayout" name="y2RangeLayout">
+                <item>
+                 <widget class="QDoubleSpinBox" name="y2MinRangeSpinBox">
+                  <property name="decimals">
+                   <number>6</number>
+                  </property>
+                  <property name="minimum">
+                   <double>-1000000000000.000000000000000</double>
+                  </property>
+                  <property name="maximum">
+                   <double>1000000000000.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="y2RangeLabel_2">
+                  <property name="maximumSize">
+                   <size>
+                    <width>10</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>-</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QDoubleSpinBox" name="y2MaxRangeSpinBox">
+                  <property name="decimals">
+                   <number>6</number>
+                  </property>
+                  <property name="minimum">
+                   <double>-1000000000000.000000000000000</double>
+                  </property>
+                  <property name="maximum">
+                   <double>1000000000000.000000000000000</double>
+                  </property>
+                  <property name="value">
+                   <double>0.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="5" column="0">
+               <widget class="QLabel" name="y3RangeLabel">
+                <property name="text">
+                 <string>Third</string>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="1">
+               <layout class="QHBoxLayout" name="y3RangeLayout">
+                <item>
+                 <widget class="QDoubleSpinBox" name="y3MinRangeSpinBox">
+                  <property name="decimals">
+                   <number>6</number>
+                  </property>
+                  <property name="minimum">
+                   <double>-1000000000000.000000000000000</double>
+                  </property>
+                  <property name="maximum">
+                   <double>1000000000000.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="y3RangeLabel_2">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>10</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>-</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QDoubleSpinBox" name="y3MaxRangeSpinBox">
+                  <property name="decimals">
+                   <number>6</number>
+                  </property>
+                  <property name="minimum">
+                   <double>-1000000000000.000000000000000</double>
+                  </property>
+                  <property name="maximum">
+                   <double>1000000000000.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>Plot</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_6">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_9">
+         <item>
+          <widget class="QTreeWidget" name="plotTreeWidget">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <column>
+            <property name="text">
+             <string notr="true">1</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_11">
+           <item>
+            <widget class="QPushButton" name="plotNewButton">
+             <property name="text">
+              <string>New</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="plotCopyButton">
+             <property name="text">
+              <string>Copy</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="plotUpButton">
+             <property name="text">
+              <string>↑</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="plotDownButton">
+             <property name="text">
+              <string>↓</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="plotEnableButton">
+             <property name="text">
+              <string>Enable / Disable</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="plotDeleteButton">
+             <property name="text">
+              <string>Delete</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QFormLayout" name="formLayout_4">
+         <item row="2" column="0">
+          <widget class="QLabel" name="xyLabel">
+           <property name="text">
+            <string>X : Y</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="yAxisLabel">
+           <property name="text">
+            <string>Y axis</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <layout class="QHBoxLayout" name="xySettingLayout">
+           <item>
+            <widget class="QComboBox" name="xComboBox"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="xySpacerLabel">
+             <property name="maximumSize">
+              <size>
+               <width>10</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>:</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="yComboBox"/>
+           </item>
+          </layout>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="dataScopeLabel_2">
+           <property name="text">
+            <string>Data Scope</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QComboBox" name="yAxisComboBox"/>
+         </item>
+         <item row="3" column="1">
+          <layout class="QHBoxLayout" name="dataScopeLayout">
+           <item>
+            <widget class="QSpinBox" name="dataScopeSpinBox1">
+             <property name="minimum">
+              <number>-1</number>
+             </property>
+             <property name="maximum">
+              <number>99999999</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="dataScopeLabel">
+             <property name="maximumSize">
+              <size>
+               <width>10</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>-</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="dataScopeSpinBox2">
+             <property name="minimum">
+              <number>-1</number>
+             </property>
+             <property name="maximum">
+              <number>99999999</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="styleLabel">
+           <property name="text">
+            <string>Style</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QComboBox" name="styleComboBox"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="plotColorLabel">
+           <property name="text">
+            <string>Color</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="plotColorEdit"/>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
