@@ -1,5 +1,5 @@
 # GraphSIDE
-Cross-Platform Applications for creating Multi-Axis Graphs from data file
+Cross-Platform Application for creating Multi-Axis Graphs from data file
 
 ## Images
 ![mainWindow](https://github.com/nebula121/GraphSIDE/blob/master/readmeImage/mainWindow.png)
