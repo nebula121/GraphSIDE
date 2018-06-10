@@ -238,6 +238,8 @@ class PlotSetting(QDialog):
         else:
             treeWidget.addTopLevelItem(item)
 
+        self.plotSettingChanged.emit()
+            
 
     def moveTreeWidgetItem(self, treeWidget = None, index = 0, direction = 0):
         if treeWidget is None:
@@ -251,11 +253,15 @@ class PlotSetting(QDialog):
         treeWidget.insertTopLevelItem(index + direction, item)
         treeWidget.setCurrentItem(item)
 
+        self.plotSettingChanged.emit()
+        
 
     def deleteTreeWidgetItem(self, treeWidget = None, index = -1):
         item = treeWidget.takeTopLevelItem(index)
         del item
 
+        self.plotSettingChanged.emit()
+        
 
     def getPlotSettings(self):
         plotSetting = dict()
