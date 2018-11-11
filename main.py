@@ -14,6 +14,8 @@
 
 import sys
 import os
+import numpy as np
+import pandas as pd
 from PySide.QtCore import *
 from PySide.QtGui import *
 #from PySide.QtUiTools import QUiLoader
@@ -42,7 +44,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # GUI部品を作成
         #self.ui = QUiLoader().load("./mainWindow.ui")
         self.ui = self
-#        self.imageScaleCheckBox = QCheckBox()
+        # self.imageScaleCheckBox = QCheckBox()
 
         # GUI部品の設定を修正
         self.setupUi(self)
@@ -66,7 +68,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                                                                              self.currentGraphSetSetting, 
                                                                              self.tempFolderPath, 
                                                                              self.ui.fileNameListWidget.selectedItems()[0].text()))
-#        self.imageScaleCheckBox.stateChanged.connect(lambda: self.changeImageScale(self.imageScaleCheckBox.isChecked()))
+        # self.imageScaleCheckBox.stateChanged.connect(lambda: self.changeImageScale(self.imageScaleCheckBox.isChecked()))
         self.ui.exportButton.clicked.connect(lambda: self.exportGraphsByFile(self.ui.fileNameListWidget.selectedItems()))
         #self.ui.settingButton.clicked.connect(lambda: self.openSettingDialog(self.settings["dataSet"], self.settings["graphSet"]))
         self.ui.folderSelectDialogButton.clicked.connect(lambda: self.openFolderSelectDialog(self.ui.folderPathEdit.text()))
@@ -76,7 +78,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # 起動時処理
         self.checkFolderPathEditError(self.ui.folderPathEdit.text())
         self.updateFileNameListWidget(self.ui.folderPathEdit.text())
-#        self.changeImageScale(self.imageScaleCheckBox.isChecked())
+        # self.changeImageScale(self.imageScaleCheckBox.isChecked())
         self.imageScale = 1 # 仮
         self.setCurrentSetting(self.ui.graphSetComboBox.currentIndex() + 1)
 
@@ -208,99 +210,27 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
 
     def loadDataSet(self, dataSetSetting, folderPath, fileName):
-        # 空のデータリストとデータリスト一式リストを用意する
-        dataSet = list()
-
-        index = 1
-        indexList = list()
-        constantNumList = list()
-
-        i = 0
-        while i < len(dataSetSetting["rawData"]):
-            dataSet.append(list())
-            i += 1
-
-        # ファイルのパスを生成し、ファイルを読み込む
-        self.createGraphErrorMsg = str("ファイルの読み込みに失敗しました。\n\n" + 
-                                       
-                                       "  1. フォルダーのパスを確認してください。\n" + 
-                                       "  2. ファイル名を確認してください。")
-
         filePath = folderPath + "//" + fileName
-        file = open(filePath, 'r')
+        dataSet = np.loadtxt(filePath, delimiter=",", skiprows=dataSetSetting["headerNum"]).T
+        indexData = np.arange(dataSet.shape[1])
+        constData = np.ones(dataSet.shape[1])
+        dataSet = np.vstack([indexData, constData, dataSet])
 
-        # [6.2-3] forループを回してファイルを1行毎に読み込んでいく
-        self.createGraphErrorMsg = str("データの読み込みに失敗しました。\n\n" + 
-                                       
-                                       "  1. Graph setとデータファイルの対応を確認してください。\n" + 
-                                       "  2. 設定 > Data set > ヘッダー数を確認してください。\n" + 
-                                       "  3. 設定 > Data set > Raw data数とデータファイルの系列数の対応を確認してください。")
-
-        lineNum = 0
-
-        for line in file:
-            # [6.2-4] ヘッダー部分は飛ばす
-            if lineNum >= dataSetSetting["headerNum"]:
-                # [6.2-5] 改行文字を消去し、カンマ区切りで列毎に分割する
-                line = line.rstrip()
-                a = line.split(',')
-
-                # [6.2-6] データをセットする
-                index += 1
-
-                for i in range(len(dataSetSetting["rawData"])):
-                    dataSet[i].append(a[i])
-            lineNum = lineNum + 1
-
-        # [6.2-7] ファイルを閉じる
-        self.createGraphErrorMsg = str("ファイル、または、データの読み込みに失敗しました。")
-
-        file.close()
-
-        indexList = [i for i in range(index - 1)]
-        constantNumList = [1] * (index - 1)
-        
-        dataSet.insert(0, indexList)
-        dataSet.insert(1, constantNumList)
-
-        # [6.2-9] 素のデータリスト一式をreturnする
         return dataSet
-
     
+
     def processDataSet(self, dataSet):
-        # [6.1-3] whileループを回して係数をかけていく
-        dataLoopNum = 1
+        rawDataSetSettings = self.currentDataSetSetting["rawData"]
+        loopNum = 2
 
-        rawDataSetSetting = self.currentDataSetSetting["rawData"]
+        for rawDataSetSettingStrIndex, rawData in zip(sorted(rawDataSetSettings), dataSet[2:]):
+            rawDataSetSetting = rawDataSetSettings[rawDataSetSettingStrIndex]
 
-        while dataLoopNum <= len(rawDataSetSetting):
-            if (rawDataSetSetting["rawData" + str(dataLoopNum)]["coefficient"]):
-
-                datumLoopNum = 0
-
-                coefficient = rawDataSetSetting["rawData" + str(dataLoopNum)]["coefficient"]
-
-                while datumLoopNum < len(dataSet[dataLoopNum]):
-                    dataSet[dataLoopNum + 1][datumLoopNum] = coefficient * float(dataSet[dataLoopNum + 1][datumLoopNum])
-
-                    datumLoopNum += 1
-
-            dataLoopNum += 1
+            if rawDataSetSetting["coefficient"] is not (0 or 1):
+                dataSet[loopNum] = rawDataSetSetting["coefficient"] * rawData
             
-        # while -> for
-        #rawDataSetSettings = self.currentDataSetSetting["rawData"]
-        
-        #for rawDataSetSettingStrIndex, rawData in zip(rawDataSetSettings, dataSet):
-        #    rawDataSetSetting = rawDataSetSettings[rawDataSetSettingStrIndex]
+            loopNum += 1
 
-        #    if rawDataSetSetting["coefficient"] is not (0 or 1):
-        #        coefficient = rawDataSetSetting["coefficient"]
-        #        print(rawDataSetSetting["name"], coefficient)
-
-        #        for datum in rawData:
-        #            datum = coefficient * float(datum)
-
-        # [6.1-5] データリスト一式をreturnする
         return dataSet
 
 
@@ -310,28 +240,21 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         i = 1
 
         while i <= len(calcDataSettings):
-            calcData = []
-            dataLoopNum = 0
+            calcData = np.array
             
             firstCoefficient = calcDataSettings["calcData" + str(i)]["firstCoefficient"]
-            firstData = list(dataSet[self.getDataIndex(calcDataSettings["calcData" + str(i)]["firstData"])])
+            firstData = np.array(dataSet[self.getDataIndex(calcDataSettings["calcData" + str(i)]["firstData"])])
             secondCoefficient = calcDataSettings["calcData" + str(i)]["secondCoefficient"]
-            secondData = list(dataSet[self.getDataIndex(calcDataSettings["calcData" + str(i)]["secondData"])])
+            secondData = np.array(dataSet[self.getDataIndex(calcDataSettings["calcData" + str(i)]["secondData"])])
 
             if calcDataSettings["calcData" + str(i)]["operator"] == "+":
-                while dataLoopNum < len(firstData):
-                    calcData.append(firstCoefficient * firstData[dataLoopNum] + secondCoefficient * secondData[dataLoopNum])
-                    dataLoopNum += 1
+                calcData = firstCoefficient * firstData + secondCoefficient * secondData
             elif calcDataSettings["calcData" + str(i)]["operator"] == "-":
-                while dataLoopNum < len(firstData):
-                    calcData.append(firstCoefficient * firstData[dataLoopNum] - secondCoefficient * secondData[dataLoopNum])
-                    dataLoopNum += 1
+                calcData = firstCoefficient * firstData - secondCoefficient * secondData
             elif calcDataSettings["calcData" + str(i)]["operator"] == "":
-                while dataLoopNum < len(firstData):
-                    calcData.append(firstCoefficient * firstData[dataLoopNum])
-                    dataLoopNum += 1
-
-            dataSet.append(calcData)
+                calcData = firstCoefficient * firstData
+            print(calcData)
+            dataSet = np.vstack([dataSet, calcData])
 
             i += 1
 
